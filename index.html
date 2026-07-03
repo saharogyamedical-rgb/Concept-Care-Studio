@@ -1,0 +1,1397 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concept Care Studio | Digital Marketing Agency</title>
+  <style>
+    :root {
+      --bg: #050814;
+      --panel: rgba(255, 255, 255, 0.08);
+      --panel-strong: rgba(255, 255, 255, 0.13);
+      --text: #f7fbff;
+      --muted: #aebbd0;
+      --cyan: #18d4ff;
+      --pink: #ff3fa4;
+      --orange: #ff9d2f;
+      --green: #25d366;
+      --line: rgba(255, 255, 255, 0.16);
+      --shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(24, 212, 255, 0.22), transparent 32%),
+        radial-gradient(circle at 88% 14%, rgba(255, 63, 164, 0.19), transparent 28%),
+        radial-gradient(circle at 80% 80%, rgba(255, 157, 47, 0.13), transparent 34%),
+        linear-gradient(145deg, #03050d 0%, #091326 48%, #050814 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 78%);
+      z-index: -2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 8, 20, 0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 24px rgba(24, 212, 255, 0.24);
+    }
+
+    .brand span {
+      line-height: 1.05;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: #d9e5f7;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      opacity: 0.88;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+      opacity: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      gap: 10px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.34);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+    }
+
+    .btn-primary {
+      border: 0;
+      background: linear-gradient(135deg, var(--cyan), var(--pink) 52%, var(--orange));
+      box-shadow: 0 12px 28px rgba(255, 63, 164, 0.24);
+    }
+
+    .btn-whatsapp {
+      border: 0;
+      background: linear-gradient(135deg, #19b65a, var(--green));
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.22);
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 78px);
+      display: grid;
+      align-items: center;
+      padding: 70px 0 50px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #d9efff;
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .pulse-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8);
+      animation: pulse 1.8s infinite;
+    }
+
+    h1 {
+      margin-top: 22px;
+      max-width: 760px;
+      font-size: clamp(44px, 8vw, 92px);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(120deg, var(--cyan), #f4f9ff 36%, var(--pink) 68%, var(--orange));
+      background-size: 180% 180%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradientShift 6s ease infinite;
+    }
+
+    .hero p {
+      margin-top: 24px;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 42px;
+      max-width: 650px;
+    }
+
+    .stat {
+      min-height: 104px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(6px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .trust-strip {
+      margin-top: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.055);
+      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+
+    .trust-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+
+    .trust-track span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 46px;
+      padding: 0 26px;
+      color: #dfeaff;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 520px;
+    }
+
+    .logo-stage {
+      position: relative;
+      width: min(410px, 86vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .logo-stage::before,
+    .logo-stage::after {
+      content: "";
+      position: absolute;
+      inset: -16px;
+      border-radius: 50%;
+      background: conic-gradient(from 120deg, var(--cyan), var(--pink), var(--orange), var(--cyan));
+      filter: blur(8px);
+      opacity: 0.44;
+    }
+
+    .logo-stage::after {
+      inset: 26px;
+      filter: blur(18px);
+      opacity: 0.18;
+    }
+
+    .logo-stage img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      width: 190px;
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(9, 19, 38, 0.76);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+      animation: drift 6s ease-in-out infinite;
+    }
+
+    .floating-card b {
+      display: block;
+      font-size: 15px;
+    }
+
+    .floating-card span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .card-1 {
+      left: 0;
+      top: 78px;
+    }
+
+    .card-2 {
+      right: -4px;
+      bottom: 76px;
+      animation-delay: -1.8s;
+    }
+
+    section {
+      padding: 86px 0;
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 720px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      max-width: 720px;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 430px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .proof-panel {
+      min-height: 360px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(150deg, rgba(24, 212, 255, 0.15), rgba(255, 63, 164, 0.09)),
+        rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .proof-panel h3 {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.02;
+      max-width: 520px;
+    }
+
+    .proof-panel p {
+      margin-top: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .proof-item b {
+      font-size: 15px;
+    }
+
+    .proof-item span {
+      color: var(--cyan);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .showcase-card {
+      min-height: 172px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.065);
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.34);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .showcase-card span {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .showcase-card h3 {
+      margin-top: 14px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .showcase-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 260px;
+      padding: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045)),
+        rgba(255, 255, 255, 0.04);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(24, 212, 255, 0.24), transparent 42%, rgba(255, 63, 164, 0.22));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(255, 255, 255, 0.35);
+      background: var(--panel-strong);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--cyan), var(--pink));
+      color: #06101f;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      line-height: 1.15;
+    }
+
+    .price {
+      margin-top: 18px;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .service-card p {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .review-shell {
+      position: relative;
+    }
+
+    .reviews {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding: 2px 2px 16px;
+    }
+
+    .reviews::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card {
+      flex: 0 0 calc((100% - 32px) / 3);
+      scroll-snap-align: start;
+      min-height: 260px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.045)),
+        rgba(255, 255, 255, 0.04);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 4px;
+      color: #ffd166;
+      font-size: 20px;
+      line-height: 1;
+      text-shadow: 0 0 14px rgba(255, 209, 102, 0.24);
+    }
+
+    .review-card p {
+      margin-top: 18px;
+      color: #dbe6f6;
+      line-height: 1.75;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--pink));
+      color: #06101f;
+      font-weight: 900;
+    }
+
+    .reviewer b {
+      display: block;
+    }
+
+    .reviewer span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .review-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .review-arrows {
+      display: flex;
+      gap: 10px;
+    }
+
+    .review-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .review-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .review-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .review-dot {
+      width: 9px;
+      height: 9px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: width 0.2s ease, background 0.2s ease;
+    }
+
+    .review-dot.active {
+      width: 26px;
+      background: linear-gradient(135deg, var(--cyan), var(--pink));
+    }
+
+    .step {
+      min-height: 190px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .step span {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .step h3 {
+      font-size: 19px;
+    }
+
+    .step p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      padding: 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(24, 212, 255, 0.18), rgba(255, 63, 164, 0.15), rgba(255, 157, 47, 0.14)),
+        rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-band::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -80px;
+      top: -120px;
+      border-radius: 50%;
+      border: 34px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cta-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .cta-content h2 {
+      max-width: 720px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.05;
+    }
+
+    .cta-content p {
+      margin-top: 14px;
+      max-width: 610px;
+      color: #d6e2f3;
+      line-height: 1.65;
+    }
+
+    footer {
+      padding: 34px 0 42px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 30;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.28);
+      animation: whatsappBounce 3.4s ease-in-out infinite;
+    }
+
+    .whatsapp-float span {
+      font-size: 24px;
+      transform: translateY(-1px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes pulse {
+      70% {
+        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    @keyframes gradientShift {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-16px);
+      }
+    }
+
+    @keyframes drift {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(13px);
+      }
+    }
+
+    @keyframes marquee {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @keyframes whatsappBounce {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-8px) scale(1.04);
+      }
+    }
+
+    @media (max-width: 1020px) {
+      .hero-grid,
+      .cta-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .hero-visual {
+        min-height: 430px;
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .review-card {
+        flex-basis: calc((100% - 16px) / 2);
+      }
+
+      .section-head,
+      .cta-content,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .nav-inner {
+        min-height: auto;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 54px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .stats,
+      .services,
+      .process,
+      .showcase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .review-card {
+        flex-basis: 100%;
+      }
+
+      .hero-visual {
+        min-height: 360px;
+      }
+
+      .logo-stage {
+        width: min(300px, 78vw);
+      }
+
+      .floating-card {
+        width: 158px;
+        padding: 12px;
+      }
+
+      .card-1 {
+        left: 0;
+        top: 34px;
+      }
+
+      .card-2 {
+        right: 0;
+        bottom: 34px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .cta-band {
+        padding: 28px;
+      }
+
+      .whatsapp-float {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Concept Care Studio home">
+        <img src="concept-care-logo.jpg" alt="Concept Care Studio logo" />
+        <span>Concept Care Studio<small>Digital Marketing Agency</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-whatsapp" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener">Contact on WhatsApp</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="pulse-dot"></span> Premium creative and performance marketing studio</div>
+          <h1>Build a brand people remember with <span class="gradient-text">Concept Care Studio</span></h1>
+          <p>Concept Care Studio is a digital marketing agency for growing businesses that need premium reels, creative posters, Meta ads management, landing pages and modern website design that attract attention and convert visitors into enquiries.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services">View Services</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener">Contact on WhatsApp</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>50+</strong>
+              <span>Creative assets planned and delivered</span>
+            </div>
+            <div class="stat">
+              <strong>4.9</strong>
+              <span>Client satisfaction rating</span>
+            </div>
+            <div class="stat">
+              <strong>360</strong>
+              <span>Brand, content, ads and web support</span>
+            </div>
+          </div>
+          <div class="trust-strip" aria-label="Agency capabilities">
+            <div class="trust-track">
+              <span>Brand Strategy</span>
+              <span>Meta Ads</span>
+              <span>Reels</span>
+              <span>Websites</span>
+              <span>Landing Pages</span>
+              <span>Creative Posters</span>
+              <span>Brand Strategy</span>
+              <span>Meta Ads</span>
+              <span>Reels</span>
+              <span>Websites</span>
+              <span>Landing Pages</span>
+              <span>Creative Posters</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="floating-card card-1">
+            <b>Performance Marketing</b>
+            <span>Campaign planning, creatives and conversion-focused execution.</span>
+          </div>
+          <div class="logo-stage">
+            <img src="concept-care-logo.jpg" alt="Concept Care Studio logo" />
+          </div>
+          <div class="floating-card card-2">
+            <b>Premium Web Presence</b>
+            <span>Landing pages and websites designed to convert visitors.</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Digital marketing services designed for visibility, trust and conversion.</h2>
+          <p>From social media creatives to performance marketing and business websites, every service is planned to strengthen your brand presence and generate better customer enquiries.</p>
+        </div>
+
+        <div class="services">
+          <article class="service-card reveal">
+            <div class="service-icon">R</div>
+            <h3>Reel<br />30 secs</h3>
+            <div class="price">Rs. 999/-</div>
+            <p>Short-form video content for Instagram, Facebook and brand promotions.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">P</div>
+            <h3>Creative<br />Poster</h3>
+            <div class="price">Rs. 499/-</div>
+            <p>Premium poster design for offers, launches, events and social media posts.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">A</div>
+            <h3>Monthly Meta<br />Ads Service</h3>
+            <div class="price">Rs. 12999/-</div>
+            <p>Monthly ad management for Facebook and Instagram with growth intent.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">L</div>
+            <h3>Landing Page<br />Building</h3>
+            <div class="price">Rs. 1199/- <small>onwards</small></div>
+            <p>Focused pages for campaigns, leads, product offers and quick conversion.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">W</div>
+            <h3>Website<br />Building</h3>
+            <div class="price">Rs. 4999/- <small>onwards</small></div>
+            <p>Modern business websites with responsive layout and impressive visuals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Built like an experienced creative agency, focused like a growth partner.</h2>
+          <p>Every project is designed to improve brand identity, social media presentation, website credibility and customer conversion across digital platforms.</p>
+        </div>
+
+        <div class="proof-grid">
+          <div class="proof-panel reveal">
+            <h3>Creative systems that make businesses look established.</h3>
+            <p>From first impression to final enquiry, we shape the digital journey with clean design, bold messaging and practical marketing execution.</p>
+            <div class="proof-list">
+              <div class="proof-item"><b>Brand visuals and social content</b><span>Premium</span></div>
+              <div class="proof-item"><b>Lead-focused landing pages</b><span>Conversion</span></div>
+              <div class="proof-item"><b>Monthly ad campaign support</b><span>Growth</span></div>
+            </div>
+          </div>
+
+          <div class="showcase-grid">
+            <article class="showcase-card reveal">
+              <span>01 / Identity</span>
+              <h3>Sharper brand perception</h3>
+              <p>Professional creatives that help a business look trusted before the first conversation even starts.</p>
+            </article>
+            <article class="showcase-card reveal">
+              <span>02 / Attention</span>
+              <h3>Scroll-stopping content</h3>
+              <p>Reels and posters planned for social media attention, clarity and stronger recall.</p>
+            </article>
+            <article class="showcase-card reveal">
+              <span>03 / Leads</span>
+              <h3>Pages made to convert</h3>
+              <p>Landing pages and websites structured around offers, credibility and enquiry actions.</p>
+            </article>
+            <article class="showcase-card reveal">
+              <span>04 / Campaigns</span>
+              <h3>Meta ads with direction</h3>
+              <p>Creative-led ad campaigns for businesses that want consistent visibility and growth momentum.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Client reviews from brands that wanted a premium digital presence.</h2>
+          <p>Businesses choose Concept Care Studio for professional branding, social media marketing creatives, landing pages, websites and Meta ad campaigns that feel clear, modern and growth-focused.</p>
+        </div>
+
+        <!-- Replace these sample testimonials with real client reviews whenever available. -->
+        <div class="review-shell reveal">
+          <div class="reviews" id="reviewSlider">
+            <article class="review-card">
+              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+              <p>"Concept Care Studio upgraded our brand presentation completely. The social media posters looked premium, the reel edits were sharp and our page finally started looking like a serious business."</p>
+              <div class="reviewer">
+                <div class="avatar">A</div>
+                <div><b>Aarav Mehta</b><span>Retail Brand Owner</span></div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+              <p>"The landing page was clean, fast and conversion-focused. Customers understood our offer quickly and the WhatsApp enquiry button made the lead flow much smoother."</p>
+              <div class="reviewer">
+                <div class="avatar">N</div>
+                <div><b>Nisha Verma</b><span>Coaching Business</span></div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+              <p>"Their Meta ads service gave our campaign a proper direction. The creatives, targeting approach and messaging felt professional from day one."</p>
+              <div class="reviewer">
+                <div class="avatar">R</div>
+                <div><b>Rohan Singh</b><span>Local Service Brand</span></div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+              <p>"We needed a modern website for our business and the final design looked much better than expected. It gave our brand the trust factor we were missing online."</p>
+              <div class="reviewer">
+                <div class="avatar">P</div>
+                <div><b>Priya Sharma</b><span>Salon and Beauty Studio</span></div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="stars" aria-label="4 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span></div>
+              <p>"The creative posters were delivered with a premium look and clear brand messaging. Our offers started looking more professional across Instagram and WhatsApp."</p>
+              <div class="reviewer">
+                <div class="avatar">K</div>
+                <div><b>Karan Malhotra</b><span>Restaurant Owner</span></div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+              <p>"The reel concept, editing style and captions were exactly aligned with our audience. It helped us keep our content consistent and more engaging."</p>
+              <div class="reviewer">
+                <div class="avatar">S</div>
+                <div><b>Simran Kaur</b><span>Boutique Founder</span></div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+              <p>"What I liked most was the agency-style process. They understood the business, planned the visuals and delivered marketing assets that looked polished and brand-safe."</p>
+              <div class="reviewer">
+                <div class="avatar">M</div>
+                <div><b>Mohit Jain</b><span>Real Estate Consultant</span></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="review-controls" aria-label="Review slider controls">
+            <div class="review-dots" id="reviewDots"></div>
+            <div class="review-arrows">
+              <button class="review-btn" type="button" data-review-prev aria-label="Previous review">&lt;</button>
+              <button class="review-btn" type="button" data-review-next aria-label="Next review">&gt;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Simple process. Premium output.</h2>
+          <p>Starting a project is simple. Share your goal, and we handle the creative execution with a structured agency workflow.</p>
+        </div>
+
+        <div class="process">
+          <div class="step reveal">
+            <span>1</span>
+            <h3>Brief</h3>
+            <p>We understand your business, audience, offer and target outcome before choosing the direction.</p>
+          </div>
+          <div class="step reveal">
+            <span>2</span>
+            <h3>Concept</h3>
+            <p>We plan the visual style, content angle and offer positioning for a stronger first impression.</p>
+          </div>
+          <div class="step reveal">
+            <span>3</span>
+            <h3>Create</h3>
+            <p>We build the creative, video, page or campaign in a polished and business-ready format.</p>
+          </div>
+          <div class="step reveal">
+            <span>4</span>
+            <h3>Launch</h3>
+            <p>You receive ready-to-use assets that can go live across social media, ads or your website.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div class="cta-content">
+            <div>
+              <h2>Ready to make your brand look premium?</h2>
+              <p>Message us on WhatsApp to discuss your service, budget, timeline or campaign idea.</p>
+            </div>
+            <a class="btn btn-whatsapp" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener">Contact on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>Copyright 2026 Concept Care Studio. All rights reserved.</p>
+      <p>Creative Strategy. Reels. Posters. Ads. Landing Pages. Websites.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" aria-label="Contact Concept Care Studio on WhatsApp">
+    <span>W</span>
+  </a>
+
+  <script>
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealElements.forEach((element, index) => {
+      element.style.transitionDelay = `${Math.min(index * 45, 220)}ms`;
+      revealObserver.observe(element);
+    });
+
+    const reviewSlider = document.querySelector("#reviewSlider");
+    const reviewCards = reviewSlider ? Array.from(reviewSlider.querySelectorAll(".review-card")) : [];
+    const reviewDots = document.querySelector("#reviewDots");
+    const previousReview = document.querySelector("[data-review-prev]");
+    const nextReview = document.querySelector("[data-review-next]");
+
+    const getVisibleReviewCount = () => {
+      if (window.matchMedia("(max-width: 720px)").matches) return 1;
+      if (window.matchMedia("(max-width: 1020px)").matches) return 2;
+      return 3;
+    };
+
+    const updateReviewDots = () => {
+      if (!reviewSlider || !reviewDots || !reviewCards.length) return;
+      const cardWidth = reviewCards[0].getBoundingClientRect().width + 16;
+      const activeIndex = Math.round(reviewSlider.scrollLeft / cardWidth);
+      const dotCount = Math.max(1, reviewCards.length - getVisibleReviewCount() + 1);
+      reviewDots.innerHTML = "";
+
+      for (let index = 0; index < dotCount; index += 1) {
+        const dot = document.createElement("button");
+        dot.className = `review-dot${index === activeIndex ? " active" : ""}`;
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Show review ${index + 1}`);
+        dot.addEventListener("click", () => {
+          reviewSlider.scrollTo({ left: index * cardWidth, behavior: "smooth" });
+        });
+        reviewDots.appendChild(dot);
+      }
+    };
+
+    const slideReviews = (direction) => {
+      if (!reviewSlider || !reviewCards.length) return;
+      const cardWidth = reviewCards[0].getBoundingClientRect().width + 16;
+      reviewSlider.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
+    };
+
+    previousReview?.addEventListener("click", () => slideReviews(-1));
+    nextReview?.addEventListener("click", () => slideReviews(1));
+    reviewSlider?.addEventListener("scroll", () => window.requestAnimationFrame(updateReviewDots), { passive: true });
+    window.addEventListener("resize", updateReviewDots);
+    updateReviewDots();
+  </script>
+</body>
+</html>
+
