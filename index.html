@@ -908,7 +908,43 @@
       }
     }
 
+    @media (min-width: 1280px) {
+      .container {
+        width: min(1200px, calc(100% - 56px));
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.02fr 0.98fr;
+        gap: 56px;
+      }
+
+      .services {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .service-card {
+        min-height: 284px;
+      }
+    }
+
     @media (max-width: 1020px) {
+      .container {
+        width: min(100% - 32px, 1160px);
+      }
+
+      .nav-inner {
+        gap: 14px;
+      }
+
+      .brand span {
+        max-width: 190px;
+      }
+
+      .nav-inner > .btn {
+        padding: 0 14px;
+        font-size: 13px;
+      }
+
       .hero-grid,
       .cta-content {
         grid-template-columns: 1fr;
@@ -920,6 +956,7 @@
 
       .hero-visual {
         min-height: 430px;
+        order: -1;
       }
 
       .services {
@@ -944,33 +981,98 @@
         align-items: flex-start;
         flex-direction: column;
       }
+
+      h1 {
+        max-width: 920px;
+        font-size: clamp(42px, 8vw, 76px);
+      }
+
+      .hero p {
+        max-width: 760px;
+      }
     }
 
     @media (max-width: 720px) {
       .container {
-        width: min(100% - 28px, 1160px);
+        width: min(100% - 24px, 1160px);
       }
 
       .nav-inner {
         min-height: auto;
-        padding: 14px 0;
+        padding: 12px 0;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
       }
 
       .nav-links {
         display: none;
       }
 
+      .brand {
+        min-width: 0;
+        gap: 10px;
+      }
+
+      .brand img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand span {
+        max-width: 150px;
+        font-size: 14px;
+      }
+
+      .brand small {
+        font-size: 10px;
+      }
+
+      .nav-inner > .btn {
+        min-height: 40px;
+        max-width: 132px;
+        padding: 0 12px;
+        font-size: 12px;
+        white-space: normal;
+        line-height: 1.1;
+        text-align: center;
+      }
+
       .hero {
         min-height: auto;
-        padding-top: 54px;
+        padding: 34px 0 28px;
+      }
+
+      .hero-grid {
+        gap: 18px;
+      }
+
+      .eyebrow {
+        max-width: 100%;
+        align-items: flex-start;
+        font-size: 12px;
+        line-height: 1.35;
+        border-radius: 8px;
+      }
+
+      h1 {
+        margin-top: 18px;
+        font-size: clamp(38px, 12vw, 54px);
+        line-height: 1.02;
       }
 
       .hero p {
         font-size: 16px;
+        line-height: 1.65;
+        margin-top: 18px;
       }
 
       .hero-actions .btn {
         width: 100%;
+      }
+
+      .hero-actions {
+        margin-top: 24px;
       }
 
       .stats,
@@ -980,44 +1082,152 @@
         grid-template-columns: 1fr;
       }
 
+      .stats {
+        margin-top: 26px;
+      }
+
+      .stat {
+        min-height: auto;
+      }
+
       .review-card {
         flex-basis: 100%;
       }
 
       .hero-visual {
-        min-height: 360px;
+        min-height: 335px;
       }
 
       .logo-stage {
-        width: min(300px, 78vw);
+        width: min(270px, 76vw);
       }
 
       .floating-card {
-        width: 158px;
-        padding: 12px;
+        width: min(154px, 44vw);
+        padding: 11px;
+      }
+
+      .floating-card b {
+        font-size: 13px;
+      }
+
+      .floating-card span {
+        font-size: 11px;
+        line-height: 1.35;
       }
 
       .card-1 {
-        left: 0;
-        top: 34px;
+        left: 2px;
+        top: 24px;
       }
 
       .card-2 {
-        right: 0;
-        bottom: 34px;
+        right: 2px;
+        bottom: 26px;
       }
 
       section {
-        padding: 62px 0;
+        padding: 54px 0;
+      }
+
+      .section-head {
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+
+      .section-head h2,
+      .cta-content h2 {
+        font-size: clamp(30px, 10vw, 40px);
+        line-height: 1.05;
+      }
+
+      .section-head p,
+      .proof-panel p,
+      .cta-content p {
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .service-card,
+      .step,
+      .showcase-card,
+      .review-card {
+        min-height: auto;
+        padding: 20px;
+      }
+
+      .proof-panel {
+        min-height: auto;
+        padding: 22px;
+      }
+
+      .proof-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
       }
 
       .cta-band {
-        padding: 28px;
+        padding: 24px;
+      }
+
+      .review-controls {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .review-arrows {
+        width: 100%;
+        justify-content: space-between;
       }
 
       .whatsapp-float {
         right: 16px;
         bottom: 16px;
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: min(100% - 20px, 1160px);
+      }
+
+      .nav-inner > .btn {
+        max-width: 118px;
+        padding: 0 9px;
+        font-size: 11px;
+      }
+
+      .brand span {
+        max-width: 132px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 12vw, 46px);
+      }
+
+      .hero-visual {
+        min-height: 300px;
+      }
+
+      .logo-stage {
+        width: min(238px, 72vw);
+      }
+
+      .floating-card {
+        width: 138px;
+      }
+
+      .trust-track span {
+        min-height: 40px;
+        padding: 0 18px;
+        font-size: 11px;
+      }
+
+      .price {
+        font-size: 24px;
       }
     }
   </style>
