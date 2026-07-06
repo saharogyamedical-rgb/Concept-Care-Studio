@@ -26,4 +26,4 @@ Added:
 - Back-to-top button
 - Orientation-safe responsive layout
 
-Update added: Header phone number button shows 93396 55455 and uses tel:+919339655455. Phone click tracking has been added with Meta Pixel Contact, Lead and PhoneClick custom event.
+Update added: Header phone number button shows 94776 90000 and uses tel:+919477690000. Phone click tracking has been added with Meta Pixel Contact, Lead and PhoneClick custom event.
