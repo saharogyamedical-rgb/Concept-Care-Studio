@@ -89,6 +89,15 @@
     });
   });
 
+  document.querySelectorAll('.js-call').forEach((button) => {
+    button.addEventListener('click', () => {
+      const label = button.getAttribute('data-call-label') || 'Phone Call';
+      safeFbq('Contact', { content_name: label, contact_method: 'phone' });
+      safeFbq('Lead', { content_name: label, contact_method: 'phone' });
+      safeFbqCustom('PhoneClick', { button: label });
+    });
+  });
+
   const reviewSlider = document.querySelector('#reviewSlider');
   const reviewCards = reviewSlider ? Array.from(reviewSlider.querySelectorAll('.review-card')) : [];
   const reviewDots = document.querySelector('#reviewDots');

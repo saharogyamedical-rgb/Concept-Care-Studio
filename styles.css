@@ -193,6 +193,64 @@ button { font: inherit; }
 .nav-links a { opacity: 0.86; transition: color .22s ease, opacity .22s ease, transform .22s ease; }
 .nav-links a:hover { color: var(--cyan); opacity: 1; transform: translateY(-2px); }
 
+.nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.phone-pill {
+  position: relative;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: linear-gradient(180deg, rgba(255,255,255,.105), rgba(255,255,255,.055));
+  color: #fff;
+  font-weight: 1000;
+  white-space: nowrap;
+  box-shadow: 0 14px 36px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.13);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+.phone-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 18% 20%, rgba(23,215,255,.32), transparent 38%), radial-gradient(circle at 92% 70%, rgba(255,159,49,.2), transparent 42%);
+  opacity: .9;
+  z-index: -1;
+}
+.phone-pill::after {
+  content: "☎";
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  color: var(--cyan);
+  font-size: 13px;
+  order: -1;
+}
+.phone-pill span {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.phone-pill strong {
+  font-size: 14px;
+  letter-spacing: .2px;
+}
+.phone-pill:hover { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: 0 22px 48px rgba(0,0,0,.3); }
+
 .menu-toggle {
   display: none;
   width: 46px;
@@ -579,8 +637,12 @@ h1 {
 
 @media (max-width: 1120px) {
   :root { --container: min(100% - 34px, 1180px); }
-  .nav-links { gap: 18px; }
-  .nav-cta { padding: 0 15px; }
+  .nav { gap: 14px; }
+  .nav-links { gap: 14px; font-size: 13px; }
+  .nav-actions { gap: 9px; }
+  .phone-pill { min-height: 44px; padding: 0 13px; }
+  .phone-pill strong { font-size: 13px; }
+  .nav-cta { min-height: 44px; padding: 0 13px; font-size: 13px; }
   .hero-grid, .results-grid { grid-template-columns: 1fr; }
   .hero-visual { min-height: 500px; order: -1; }
   .hero-copy { text-align: left; }
@@ -598,7 +660,12 @@ h1 {
   .brand-mark { width: 46px; height: 46px; }
   .brand-copy strong { font-size: 14px; }
   .brand-copy small { font-size: 11px; }
-  .menu-toggle { display: block; margin-left: auto; }
+  .brand { order: 1; }
+  .nav-actions { order: 2; margin-left: auto; }
+  .menu-toggle { display: block; order: 3; margin-left: 0; }
+  .phone-pill { min-height: 42px; padding: 0 12px; gap: 7px; }
+  .phone-pill span { display: none; }
+  .phone-pill::after { width: 24px; height: 24px; font-size: 12px; }
   .nav-links {
     position: fixed;
     left: 13px;
@@ -643,8 +710,12 @@ h1 {
 @media (max-width: 560px) {
   :root { --container: min(100% - 22px, 1180px); }
   .section-pad { padding: 58px 0; }
-  .brand-copy { max-width: 158px; }
-  .brand-copy strong { white-space: normal; }
+  .brand-copy { max-width: 132px; }
+  .brand-copy strong { white-space: normal; font-size: 13px; }
+  .brand-copy small { display: none; }
+  .nav { gap: 9px; }
+  .phone-pill { padding: 0 10px; min-height: 40px; }
+  .phone-pill strong { font-size: 12.5px; }
   h1 { font-size: clamp(38px, 13vw, 58px); line-height: 1.01; }
   .hero-text { font-size: 15.5px; line-height: 1.68; }
   .hero-actions .btn, .cta-actions .btn { width: 100%; }
@@ -669,10 +740,20 @@ h1 {
   .live-review-toast { display: none; }
 }
 
+@media (max-width: 430px) {
+  .brand-copy { display: none; }
+  .brand-mark { width: 42px; height: 42px; }
+  .phone-pill { padding: 0 9px; }
+  .phone-pill strong { font-size: 12px; letter-spacing: 0; }
+  .phone-pill::after { display: none; }
+}
+
 @media (max-width: 380px) {
   .brand-mark { width: 42px; height: 42px; }
-  .brand-copy { max-width: 132px; }
-  .brand-copy strong { font-size: 13px; }
+  .brand-copy { display: none; }
+  .phone-pill { padding: 0 9px; }
+  .phone-pill strong { font-size: 12px; letter-spacing: 0; }
+  .phone-pill::after { display: none; }
   .menu-toggle { width: 42px; height: 42px; }
   h1 { font-size: 36px; }
   .halo-stage { width: min(270px, 82vw); }
@@ -680,6 +761,8 @@ h1 {
 
 @media (max-height: 520px) and (orientation: landscape) {
   .hero { min-height: auto; }
+  .nav { min-height: 66px; }
+  .phone-pill { min-height: 38px; }
   .hero-grid { grid-template-columns: 1fr 0.82fr; gap: 24px; }
   .hero-visual { min-height: 300px; order: initial; }
   .halo-stage { width: min(270px, 42vw); }
