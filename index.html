@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#050814" />
+  <meta name="description" content="Concept Care Studio is a premium digital marketing agency for reels, posters, Meta ads, landing pages and modern business websites." />
+  <meta property="og:title" content="Concept Care Studio | Digital Marketing Agency" />
+  <meta property="og:description" content="Premium creative strategy, reels, posters, Meta ads, landing pages and websites for growing businesses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="concept-care-logo.jpg" />
   <title>Concept Care Studio | Digital Marketing Agency</title>
-  <!-- Meta Pixel Code -->
+  <link rel="preload" href="concept-care-logo.jpg" as="image" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Meta Pixel Code - preserved from original file -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -21,1604 +30,332 @@
   src="https://www.facebook.com/tr?id=1677455533527086&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
-  <style>
-    :root {
-      --bg: #050814;
-      --panel: rgba(255, 255, 255, 0.08);
-      --panel-strong: rgba(255, 255, 255, 0.13);
-      --text: #f7fbff;
-      --muted: #aebbd0;
-      --cyan: #18d4ff;
-      --pink: #ff3fa4;
-      --orange: #ff9d2f;
-      --green: #25d366;
-      --line: rgba(255, 255, 255, 0.16);
-      --shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
-    }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 12% 18%, rgba(24, 212, 255, 0.22), transparent 32%),
-        radial-gradient(circle at 88% 14%, rgba(255, 63, 164, 0.19), transparent 28%),
-        radial-gradient(circle at 80% 80%, rgba(255, 157, 47, 0.13), transparent 34%),
-        linear-gradient(145deg, #03050d 0%, #091326 48%, #050814 100%);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 78%);
-      z-index: -2;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1160px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid var(--line);
-      background: rgba(5, 8, 20, 0.92);
-      backdrop-filter: blur(8px);
-    }
-
-    .nav-inner {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: 0;
-    }
-
-    .brand img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 24px rgba(24, 212, 255, 0.24);
-    }
-
-    .brand span {
-      line-height: 1.05;
-    }
-
-    .brand small {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      color: #d9e5f7;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .nav-links a {
-      opacity: 0.88;
-      transition: color 0.2s ease, opacity 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--cyan);
-      opacity: 1;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      gap: 10px;
-      padding: 0 18px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      font-weight: 800;
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255, 255, 255, 0.34);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
-    }
-
-    .btn-primary {
-      border: 0;
-      background: linear-gradient(135deg, var(--cyan), var(--pink) 52%, var(--orange));
-      box-shadow: 0 12px 28px rgba(255, 63, 164, 0.24);
-    }
-
-    .btn-whatsapp {
-      border: 0;
-      background: linear-gradient(135deg, #19b65a, var(--green));
-      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.22);
-    }
-
-    .hero {
-      position: relative;
-      min-height: calc(100vh - 78px);
-      display: grid;
-      align-items: center;
-      padding: 70px 0 50px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      align-items: center;
-      gap: 42px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: #d9efff;
-      background: rgba(255, 255, 255, 0.07);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .pulse-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8);
-      animation: pulse 1.8s infinite;
-    }
-
-    h1 {
-      margin-top: 22px;
-      max-width: 760px;
-      font-size: clamp(44px, 8vw, 92px);
-      line-height: 0.96;
-      letter-spacing: 0;
-    }
-
-    .gradient-text {
-      background: linear-gradient(120deg, var(--cyan), #f4f9ff 36%, var(--pink) 68%, var(--orange));
-      background-size: 180% 180%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: gradientShift 6s ease infinite;
-    }
-
-    .hero p {
-      margin-top: 24px;
-      max-width: 620px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.75;
-    }
-
-    .hero-actions {
-      margin-top: 34px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 42px;
-      max-width: 650px;
-    }
-
-    .stat {
-      min-height: 104px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(6px);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 26px;
-      line-height: 1;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.4;
-    }
-
-    .trust-strip {
-      margin-top: 28px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.055);
-      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-    }
-
-    .trust-track {
-      display: flex;
-      width: max-content;
-      animation: marquee 30s linear infinite;
-    }
-
-    .trust-track span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 46px;
-      padding: 0 26px;
-      color: #dfeaff;
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.6px;
-      border-right: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .hero-visual {
-      position: relative;
-      display: grid;
-      place-items: center;
-      min-height: 520px;
-    }
-
-    .logo-stage {
-      position: relative;
-      width: min(410px, 86vw);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      animation: float 7s ease-in-out infinite;
-    }
-
-    .logo-stage::before,
-    .logo-stage::after {
-      content: "";
-      position: absolute;
-      inset: -16px;
-      border-radius: 50%;
-      background: conic-gradient(from 120deg, var(--cyan), var(--pink), var(--orange), var(--cyan));
-      filter: blur(8px);
-      opacity: 0.44;
-    }
-
-    .logo-stage::after {
-      inset: 26px;
-      filter: blur(18px);
-      opacity: 0.18;
-    }
-
-    .logo-stage img {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      box-shadow: var(--shadow);
-    }
-
-    .floating-card {
-      position: absolute;
-      z-index: 3;
-      width: 190px;
-      padding: 14px 15px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(9, 19, 38, 0.76);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-      animation: drift 6s ease-in-out infinite;
-    }
-
-    .floating-card b {
-      display: block;
-      font-size: 15px;
-    }
-
-    .floating-card span {
-      display: block;
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .card-1 {
-      left: 0;
-      top: 78px;
-    }
-
-    .card-2 {
-      right: -4px;
-      bottom: 76px;
-      animation-delay: -1.8s;
-    }
-
-    section {
-      padding: 86px 0;
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 720px;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 28px;
-      margin-bottom: 34px;
-    }
-
-    .section-head h2 {
-      max-width: 720px;
-      font-size: clamp(32px, 5vw, 56px);
-      line-height: 1;
-      letter-spacing: 0;
-    }
-
-    .section-head p {
-      max-width: 430px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-    }
-
-    .proof-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .proof-panel {
-      min-height: 360px;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background:
-        linear-gradient(150deg, rgba(24, 212, 255, 0.15), rgba(255, 63, 164, 0.09)),
-        rgba(255, 255, 255, 0.06);
-      box-shadow: var(--shadow);
-    }
-
-    .proof-panel h3 {
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1.02;
-      max-width: 520px;
-    }
-
-    .proof-panel p {
-      margin-top: 16px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .proof-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .proof-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.07);
-    }
-
-    .proof-item b {
-      font-size: 15px;
-    }
-
-    .proof-item span {
-      color: var(--cyan);
-      font-weight: 900;
-      white-space: nowrap;
-    }
-
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .showcase-card {
-      min-height: 172px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.065);
-      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-    }
-
-    .showcase-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255, 255, 255, 0.34);
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .showcase-card span {
-      color: var(--orange);
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .showcase-card h3 {
-      margin-top: 14px;
-      font-size: 22px;
-      line-height: 1.15;
-    }
-
-    .showcase-card p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .service-card {
-      position: relative;
-      min-height: 260px;
-      padding: 22px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background:
-        linear-gradient(160deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045)),
-        rgba(255, 255, 255, 0.04);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
-      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(24, 212, 255, 0.24), transparent 42%, rgba(255, 63, 164, 0.22));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      border-color: rgba(255, 255, 255, 0.35);
-      background: var(--panel-strong);
-    }
-
-    .service-card:hover::before {
-      opacity: 1;
-    }
-
-    .service-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .service-icon {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 22px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, var(--cyan), var(--pink));
-      color: #06101f;
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    .service-card h3 {
-      font-size: 21px;
-      line-height: 1.15;
-    }
-
-    .price {
-      margin-top: 18px;
-      font-size: 28px;
-      font-weight: 900;
-    }
-
-    .price small {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .service-card p {
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .review-shell {
-      position: relative;
-    }
-
-    .reviews {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      padding: 2px 2px 16px;
-    }
-
-    .reviews::-webkit-scrollbar {
-      display: none;
-    }
-
-    .review-card {
-      flex: 0 0 calc((100% - 32px) / 3);
-      scroll-snap-align: start;
-      min-height: 260px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.045)),
-        rgba(255, 255, 255, 0.04);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
-    }
-
-    .stars {
-      display: inline-flex;
-      gap: 4px;
-      color: #ffd166;
-      font-size: 20px;
-      line-height: 1;
-      text-shadow: 0 0 14px rgba(255, 209, 102, 0.24);
-    }
-
-    .review-card p {
-      margin-top: 18px;
-      color: #dbe6f6;
-      line-height: 1.75;
-    }
-
-    .reviewer {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .avatar {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--cyan), var(--pink));
-      color: #06101f;
-      font-weight: 900;
-    }
-
-    .reviewer b {
-      display: block;
-    }
-
-    .reviewer span {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .review-controls {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .review-arrows {
-      display: flex;
-      gap: 10px;
-    }
-
-    .review-btn {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      font-size: 20px;
-      font-weight: 900;
-      cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .review-btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255, 255, 255, 0.32);
-      background: rgba(255, 255, 255, 0.14);
-    }
-
-    .review-dots {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .review-dot {
-      width: 9px;
-      height: 9px;
-      border: 0;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.3);
-      cursor: pointer;
-      transition: width 0.2s ease, background 0.2s ease;
-    }
-
-    .review-dot.active {
-      width: 26px;
-      background: linear-gradient(135deg, var(--cyan), var(--pink));
-    }
-
-    .step {
-      min-height: 190px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .step span {
-      display: inline-grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      margin-bottom: 20px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--cyan);
-      font-weight: 900;
-    }
-
-    .step h3 {
-      font-size: 19px;
-    }
-
-    .step p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .cta-band {
-      position: relative;
-      overflow: hidden;
-      padding: 44px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background:
-        linear-gradient(135deg, rgba(24, 212, 255, 0.18), rgba(255, 63, 164, 0.15), rgba(255, 157, 47, 0.14)),
-        rgba(255, 255, 255, 0.08);
-      box-shadow: var(--shadow);
-    }
-
-    .cta-band::before {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      right: -80px;
-      top: -120px;
-      border-radius: 50%;
-      border: 34px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .cta-content {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .cta-content h2 {
-      max-width: 720px;
-      font-size: clamp(30px, 4vw, 52px);
-      line-height: 1.05;
-    }
-
-    .cta-content p {
-      margin-top: 14px;
-      max-width: 610px;
-      color: #d6e2f3;
-      line-height: 1.65;
-    }
-
-    footer {
-      padding: 34px 0 42px;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      font-size: 14px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 30;
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--green);
-      color: #fff;
-      font-weight: 900;
-      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.28);
-      animation: whatsappBounce 3.4s ease-in-out infinite;
-    }
-
-    .whatsapp-float span {
-      font-size: 24px;
-      transform: translateY(-1px);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes pulse {
-      70% {
-        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
-    }
-
-    @keyframes gradientShift {
-      0%, 100% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-16px);
-      }
-    }
-
-    @keyframes drift {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(13px);
-      }
-    }
-
-    @keyframes marquee {
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    @keyframes whatsappBounce {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-      }
-      50% {
-        transform: translateY(-8px) scale(1.04);
-      }
-    }
-
-    @media (min-width: 1280px) {
-      .container {
-        width: min(1200px, calc(100% - 56px));
-      }
-
-      .hero-grid {
-        grid-template-columns: 1.02fr 0.98fr;
-        gap: 56px;
-      }
-
-      .services {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-      }
-
-      .service-card {
-        min-height: 284px;
-      }
-    }
-
-    @media (max-width: 1020px) {
-      .container {
-        width: min(100% - 32px, 1160px);
-      }
-
-      .nav-inner {
-        gap: 14px;
-      }
-
-      .brand span {
-        max-width: 190px;
-      }
-
-      .nav-inner > .btn {
-        padding: 0 14px;
-        font-size: 13px;
-      }
-
-      .hero-grid,
-      .cta-content {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid {
-        gap: 30px;
-      }
-
-      .hero-visual {
-        min-height: 430px;
-        order: -1;
-      }
-
-      .services {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .proof-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .process {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .review-card {
-        flex-basis: calc((100% - 16px) / 2);
-      }
-
-      .section-head,
-      .cta-content,
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      h1 {
-        max-width: 920px;
-        font-size: clamp(42px, 8vw, 76px);
-      }
-
-      .hero p {
-        max-width: 760px;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container {
-        width: min(100% - 24px, 1160px);
-      }
-
-      .nav-inner {
-        min-height: auto;
-        padding: 12px 0;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .brand {
-        min-width: 0;
-        gap: 10px;
-      }
-
-      .brand img {
-        width: 42px;
-        height: 42px;
-      }
-
-      .brand span {
-        max-width: 150px;
-        font-size: 14px;
-      }
-
-      .brand small {
-        font-size: 10px;
-      }
-
-      .nav-inner > .btn {
-        min-height: 40px;
-        max-width: 132px;
-        padding: 0 12px;
-        font-size: 12px;
-        white-space: normal;
-        line-height: 1.1;
-        text-align: center;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 34px 0 28px;
-      }
-
-      .hero-grid {
-        gap: 18px;
-      }
-
-      .eyebrow {
-        max-width: 100%;
-        align-items: flex-start;
-        font-size: 12px;
-        line-height: 1.35;
-        border-radius: 8px;
-      }
-
-      h1 {
-        margin-top: 18px;
-        font-size: clamp(38px, 12vw, 54px);
-        line-height: 1.02;
-      }
-
-      .hero p {
-        font-size: 16px;
-        line-height: 1.65;
-        margin-top: 18px;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .hero-actions {
-        margin-top: 24px;
-      }
-
-      .stats,
-      .services,
-      .process,
-      .showcase-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
-        margin-top: 26px;
-      }
-
-      .stat {
-        min-height: auto;
-      }
-
-      .review-card {
-        flex-basis: 100%;
-      }
-
-      .hero-visual {
-        min-height: 335px;
-      }
-
-      .logo-stage {
-        width: min(270px, 76vw);
-      }
-
-      .floating-card {
-        width: min(154px, 44vw);
-        padding: 11px;
-      }
-
-      .floating-card b {
-        font-size: 13px;
-      }
-
-      .floating-card span {
-        font-size: 11px;
-        line-height: 1.35;
-      }
-
-      .card-1 {
-        left: 2px;
-        top: 24px;
-      }
-
-      .card-2 {
-        right: 2px;
-        bottom: 26px;
-      }
-
-      section {
-        padding: 54px 0;
-      }
-
-      .section-head {
-        gap: 14px;
-        margin-bottom: 24px;
-      }
-
-      .section-head h2,
-      .cta-content h2 {
-        font-size: clamp(30px, 10vw, 40px);
-        line-height: 1.05;
-      }
-
-      .section-head p,
-      .proof-panel p,
-      .cta-content p {
-        font-size: 15px;
-        line-height: 1.65;
-      }
-
-      .service-card,
-      .step,
-      .showcase-card,
-      .review-card {
-        min-height: auto;
-        padding: 20px;
-      }
-
-      .proof-panel {
-        min-height: auto;
-        padding: 22px;
-      }
-
-      .proof-item {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .cta-band {
-        padding: 24px;
-      }
-
-      .review-controls {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .review-arrows {
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      .whatsapp-float {
-        right: 16px;
-        bottom: 16px;
-        width: 52px;
-        height: 52px;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .container {
-        width: min(100% - 20px, 1160px);
-      }
-
-      .nav-inner > .btn {
-        max-width: 118px;
-        padding: 0 9px;
-        font-size: 11px;
-      }
-
-      .brand span {
-        max-width: 132px;
-      }
-
-      h1 {
-        font-size: clamp(34px, 12vw, 46px);
-      }
-
-      .hero-visual {
-        min-height: 300px;
-      }
-
-      .logo-stage {
-        width: min(238px, 72vw);
-      }
-
-      .floating-card {
-        width: 138px;
-      }
-
-      .trust-track span {
-        min-height: 40px;
-        padding: 0 18px;
-        font-size: 11px;
-      }
-
-      .price {
-        font-size: 24px;
-      }
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Concept Care Studio",
+    "description": "Digital marketing agency for reels, posters, Meta ads, landing pages and business websites.",
+    "image": "concept-care-logo.jpg",
+    "url": "",
+    "areaServed": "India",
+    "sameAs": [],
+    "makesOffer": [
+      {"@type":"Offer","name":"Reel 30 secs","price":"999","priceCurrency":"INR"},
+      {"@type":"Offer","name":"Creative Poster","price":"499","priceCurrency":"INR"},
+      {"@type":"Offer","name":"Monthly Meta Ads Service","price":"12999","priceCurrency":"INR"},
+      {"@type":"Offer","name":"Landing Page Building","price":"1199","priceCurrency":"INR"},
+      {"@type":"Offer","name":"Website Building","price":"4999","priceCurrency":"INR"}
+    ]
+  }
+  </script>
 </head>
 <body>
-    <nav class="nav">
-    <div class="container nav-inner">
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader-orbit"></div>
+    <img src="concept-care-logo.jpg" alt="" />
+    <p>Loading premium experience</p>
+  </div>
+
+  <div class="site-bg" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+    <span class="cursor-glow"></span>
+  </div>
+
+  <header class="nav-wrap" id="top">
+    <nav class="container nav" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Concept Care Studio home">
-        <img src="concept-care-logo.jpg" alt="Concept Care Studio logo" />
-        <span>Concept Care Studio<small>Digital Marketing Agency</small></span>
+        <span class="brand-mark"><img src="concept-care-logo.jpg" alt="Concept Care Studio logo" /></span>
+        <span class="brand-copy">
+          <strong>Concept Care Studio</strong>
+          <small>Digital Marketing Agency</small>
+        </span>
       </a>
-      <div class="nav-links">
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" data-nav-links>
         <a href="#services">Services</a>
         <a href="#results">Results</a>
         <a href="#reviews">Reviews</a>
         <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="btn btn-whatsapp" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener">Contact on WhatsApp</a>
-    </div>
-  </nav>
 
-  <main id="top">
-    <header class="hero">
+      <a class="btn btn-whatsapp nav-cta js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" data-lead-label="Nav WhatsApp">Contact on WhatsApp</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad" aria-labelledby="hero-title">
       <div class="container hero-grid">
-        <div class="reveal">
-          <div class="eyebrow"><span class="pulse-dot"></span> Premium creative and performance marketing studio</div>
-          <h1>Build a brand people remember with <span class="gradient-text">Concept Care Studio</span></h1>
-          <p>Concept Care Studio is a digital marketing agency for growing businesses that need premium reels, creative posters, Meta ads management, landing pages and modern website design that attract attention and convert visitors into enquiries.</p>
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="live-dot"></span> Premium creative and performance marketing studio</div>
+          <h1 id="hero-title">Your business deserves a <span class="gradient-text">premium digital presence.</span></h1>
+          <p class="hero-text">Concept Care Studio helps growing businesses look professional, capture attention and convert visitors into enquiries through premium reels, posters, Meta ads, landing pages and modern websites.</p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#services">View Services</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener">Contact on WhatsApp</a>
+            <a class="btn btn-primary js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" data-lead-label="Hero WhatsApp">Start Project on WhatsApp</a>
+            <a class="btn btn-ghost" href="#services">View Packages</a>
           </div>
-          <div class="stats">
-            <div class="stat">
-              <strong>50+</strong>
-              <span>Creative assets planned and delivered</span>
-            </div>
-            <div class="stat">
-              <strong>4.9</strong>
-              <span>Client satisfaction rating</span>
-            </div>
-            <div class="stat">
-              <strong>360</strong>
-              <span>Brand, content, ads and web support</span>
-            </div>
-          </div>
-          <div class="trust-strip" aria-label="Agency capabilities">
-            <div class="trust-track">
-              <span>Brand Strategy</span>
-              <span>Meta Ads</span>
-              <span>Reels</span>
-              <span>Websites</span>
-              <span>Landing Pages</span>
-              <span>Creative Posters</span>
-              <span>Brand Strategy</span>
-              <span>Meta Ads</span>
-              <span>Reels</span>
-              <span>Websites</span>
-              <span>Landing Pages</span>
-              <span>Creative Posters</span>
-            </div>
+
+          <div class="hero-badges" aria-label="Agency highlights">
+            <div><strong>360°</strong><span>Creative + ads + web support</span></div>
+            <div><strong>4.9★</strong><span>Client satisfaction focus</span></div>
+            <div><strong>Fast</strong><span>Business-ready delivery workflow</span></div>
           </div>
         </div>
 
-        <div class="hero-visual reveal">
-          <div class="floating-card card-1">
-            <b>Performance Marketing</b>
-            <span>Campaign planning, creatives and conversion-focused execution.</span>
-          </div>
-          <div class="logo-stage">
-            <img src="concept-care-logo.jpg" alt="Concept Care Studio logo" />
-          </div>
-          <div class="floating-card card-2">
-            <b>Premium Web Presence</b>
-            <span>Landing pages and websites designed to convert visitors.</span>
+        <div class="hero-visual reveal" aria-label="Concept Care Studio visual identity">
+          <div class="halo-stage">
+            <div class="light-beam beam-one"></div>
+            <div class="light-beam beam-two"></div>
+            <div class="logo-ring"></div>
+            <div class="logo-card">
+              <img src="concept-care-logo.jpg" alt="Concept Care Studio logo" />
+            </div>
+            <div class="mini-card mini-card-left">
+              <b>Meta Ads</b>
+              <span>Campaign direction</span>
+            </div>
+            <div class="mini-card mini-card-right">
+              <b>Landing Pages</b>
+              <span>Conversion focused</span>
+            </div>
           </div>
         </div>
       </div>
-    </header>
 
-    <section id="services">
+      <div class="container trust-strip reveal" aria-label="Capabilities">
+        <div class="trust-track">
+          <span>Brand Strategy</span><span>Meta Ads</span><span>Reels</span><span>Posters</span><span>Landing Pages</span><span>Websites</span><span>Lead Generation</span>
+          <span>Brand Strategy</span><span>Meta Ads</span><span>Reels</span><span>Posters</span><span>Landing Pages</span><span>Websites</span><span>Lead Generation</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="services" aria-labelledby="services-title">
       <div class="container">
         <div class="section-head reveal">
-          <h2>Digital marketing services designed for visibility, trust and conversion.</h2>
-          <p>From social media creatives to performance marketing and business websites, every service is planned to strengthen your brand presence and generate better customer enquiries.</p>
+          <div>
+            <p class="section-kicker">Services & Pricing</p>
+            <h2 id="services-title">Everything your digital brand needs to look premium and generate enquiries.</h2>
+          </div>
+          <p>Clear packages for businesses that need social media creatives, ad support and conversion-focused web presence without a complicated agency process.</p>
         </div>
 
-        <div class="services">
-          <article class="service-card reveal">
-            <div class="service-icon">R</div>
+        <div class="services-grid">
+          <article class="service-card reveal" data-service-card>
+            <div class="service-top"><span class="service-icon">R</span><span class="service-tag">Short Form</span></div>
             <h3>Reel<br />30 secs</h3>
-            <div class="price">Rs. 999/-</div>
             <p>Short-form video content for Instagram, Facebook and brand promotions.</p>
+            <div class="price">Rs. 999/-</div>
+            <a class="card-link js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" data-lead-label="Reel Package">Enquire now</a>
           </article>
 
-          <article class="service-card reveal">
-            <div class="service-icon">P</div>
+          <article class="service-card reveal" data-service-card>
+            <div class="service-top"><span class="service-icon">P</span><span class="service-tag">Visuals</span></div>
             <h3>Creative<br />Poster</h3>
-            <div class="price">Rs. 499/-</div>
             <p>Premium poster design for offers, launches, events and social media posts.</p>
+            <div class="price">Rs. 499/-</div>
+            <a class="card-link js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" data-lead-label="Poster Package">Enquire now</a>
           </article>
 
-          <article class="service-card reveal">
-            <div class="service-icon">A</div>
+          <article class="service-card featured reveal" data-service-card>
+            <div class="service-top"><span class="service-icon">A</span><span class="service-tag">Growth</span></div>
             <h3>Monthly Meta<br />Ads Service</h3>
-            <div class="price">Rs. 12999/-</div>
             <p>Monthly ad management for Facebook and Instagram with growth intent.</p>
+            <div class="price">Rs. 12999/-</div>
+            <a class="card-link js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" data-lead-label="Meta Ads Package">Enquire now</a>
           </article>
 
-          <article class="service-card reveal">
-            <div class="service-icon">L</div>
+          <article class="service-card reveal" data-service-card>
+            <div class="service-top"><span class="service-icon">L</span><span class="service-tag">Leads</span></div>
             <h3>Landing Page<br />Building</h3>
-            <div class="price">Rs. 1199/- <small>onwards</small></div>
             <p>Focused pages for campaigns, leads, product offers and quick conversion.</p>
+            <div class="price">Rs. 1199/- <small>onwards</small></div>
+            <a class="card-link js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" data-lead-label="Landing Page Package">Enquire now</a>
           </article>
 
-          <article class="service-card reveal">
-            <div class="service-icon">W</div>
+          <article class="service-card reveal" data-service-card>
+            <div class="service-top"><span class="service-icon">W</span><span class="service-tag">Website</span></div>
             <h3>Website<br />Building</h3>
-            <div class="price">Rs. 4999/- <small>onwards</small></div>
             <p>Modern business websites with responsive layout and impressive visuals.</p>
+            <div class="price">Rs. 4999/- <small>onwards</small></div>
+            <a class="card-link js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" data-lead-label="Website Package">Enquire now</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="results">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2>Built like an experienced creative agency, focused like a growth partner.</h2>
-          <p>Every project is designed to improve brand identity, social media presentation, website credibility and customer conversion across digital platforms.</p>
+    <section class="section-pad results" id="results" aria-labelledby="results-title">
+      <div class="container results-grid">
+        <div class="section-head vertical reveal">
+          <p class="section-kicker">Why it works</p>
+          <h2 id="results-title">Creative that does not just look good — it guides users toward action.</h2>
+          <p>Every section, creative and campaign asset is planned around three priorities: trust, clarity and enquiry generation.</p>
+          <a class="btn btn-primary js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" data-lead-label="Results CTA">Discuss your business</a>
         </div>
 
-        <div class="proof-grid">
-          <div class="proof-panel reveal">
-            <h3>Creative systems that make businesses look established.</h3>
-            <p>From first impression to final enquiry, we shape the digital journey with clean design, bold messaging and practical marketing execution.</p>
-            <div class="proof-list">
-              <div class="proof-item"><b>Brand visuals and social content</b><span>Premium</span></div>
-              <div class="proof-item"><b>Lead-focused landing pages</b><span>Conversion</span></div>
-              <div class="proof-item"><b>Monthly ad campaign support</b><span>Growth</span></div>
-            </div>
-          </div>
-
-          <div class="showcase-grid">
-            <article class="showcase-card reveal">
-              <span>01 / Identity</span>
-              <h3>Sharper brand perception</h3>
-              <p>Professional creatives that help a business look trusted before the first conversation even starts.</p>
-            </article>
-            <article class="showcase-card reveal">
-              <span>02 / Attention</span>
-              <h3>Scroll-stopping content</h3>
-              <p>Reels and posters planned for social media attention, clarity and stronger recall.</p>
-            </article>
-            <article class="showcase-card reveal">
-              <span>03 / Leads</span>
-              <h3>Pages made to convert</h3>
-              <p>Landing pages and websites structured around offers, credibility and enquiry actions.</p>
-            </article>
-            <article class="showcase-card reveal">
-              <span>04 / Campaigns</span>
-              <h3>Meta ads with direction</h3>
-              <p>Creative-led ad campaigns for businesses that want consistent visibility and growth momentum.</p>
-            </article>
-          </div>
+        <div class="bento reveal" aria-label="Digital marketing benefits">
+          <article class="bento-card large">
+            <span>01 / Brand Presence</span>
+            <h3>Sharper first impression</h3>
+            <p>Professional visuals make your business look established before the customer speaks with you.</p>
+          </article>
+          <article class="bento-card">
+            <span>02 / Attention</span>
+            <h3>Scroll-stopping creatives</h3>
+            <p>Reels and posters with clear visual hierarchy.</p>
+          </article>
+          <article class="bento-card">
+            <span>03 / Conversion</span>
+            <h3>Pages made for enquiries</h3>
+            <p>Landing pages structured around offer, trust and CTA.</p>
+          </article>
+          <article class="bento-card wide">
+            <span>04 / Campaign Direction</span>
+            <h3>Meta ads with the right message</h3>
+            <p>Ad creatives and copy are planned to match audience intent and campaign objective.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="reviews">
+    <section class="section-pad stack-section" aria-labelledby="stack-title">
       <div class="container">
         <div class="section-head reveal">
-          <h2>Client reviews from brands that wanted a premium digital presence.</h2>
-          <p>Businesses choose Concept Care Studio for professional branding, social media marketing creatives, landing pages, websites and Meta ad campaigns that feel clear, modern and growth-focused.</p>
+          <div>
+            <p class="section-kicker">Agency Stack</p>
+            <h2 id="stack-title">One connected system for visibility, trust and leads.</h2>
+          </div>
+          <p>Your social media, ads and website should feel connected. We design the journey from first scroll to final WhatsApp enquiry.</p>
         </div>
 
-        <!-- Replace these sample testimonials with real client reviews whenever available. -->
+        <div class="stack-flow reveal">
+          <div class="flow-step"><span>1</span><b>Hook</b><small>Stop the scroll</small></div>
+          <div class="flow-line"></div>
+          <div class="flow-step"><span>2</span><b>Trust</b><small>Build confidence</small></div>
+          <div class="flow-line"></div>
+          <div class="flow-step"><span>3</span><b>Offer</b><small>Show value clearly</small></div>
+          <div class="flow-line"></div>
+          <div class="flow-step"><span>4</span><b>Enquiry</b><small>Drive action</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-kicker">Client Feedback</p>
+            <h2 id="reviews-title">Live review-style popups and premium testimonial section.</h2>
+          </div>
+          <p>Short, positive feedback cards are built into the page. Replace the sample names and messages with real client reviews whenever available.</p>
+        </div>
+
         <div class="review-shell reveal">
-          <div class="reviews" id="reviewSlider">
+          <div class="reviews" id="reviewSlider" aria-label="Client review carousel">
             <article class="review-card">
-              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-              <p>"Concept Care Studio upgraded our brand presentation completely. The social media posters looked premium, the reel edits were sharp and our page finally started looking like a serious business."</p>
-              <div class="reviewer">
-                <div class="avatar">A</div>
-                <div><b>Aarav Mehta</b><span>Retail Brand Owner</span></div>
-              </div>
+              <div class="stars" aria-label="5 star rating">★★★★★</div>
+              <p>Concept Care Studio upgraded our brand presentation completely. The social media posters looked premium and our page finally started looking like a serious business.</p>
+              <div class="reviewer"><span class="avatar">A</span><div><b>Aarav Mehta</b><small>Retail Brand Owner</small></div></div>
             </article>
-
             <article class="review-card">
-              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-              <p>"The landing page was clean, fast and conversion-focused. Customers understood our offer quickly and the WhatsApp enquiry button made the lead flow much smoother."</p>
-              <div class="reviewer">
-                <div class="avatar">N</div>
-                <div><b>Nisha Verma</b><span>Coaching Business</span></div>
-              </div>
+              <div class="stars" aria-label="5 star rating">★★★★★</div>
+              <p>The landing page was clean, fast and conversion-focused. Customers understood our offer quickly and the WhatsApp enquiry button made the lead flow smoother.</p>
+              <div class="reviewer"><span class="avatar">N</span><div><b>Nisha Verma</b><small>Coaching Business</small></div></div>
             </article>
-
             <article class="review-card">
-              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-              <p>"Their Meta ads service gave our campaign a proper direction. The creatives, targeting approach and messaging felt professional from day one."</p>
-              <div class="reviewer">
-                <div class="avatar">R</div>
-                <div><b>Rohan Singh</b><span>Local Service Brand</span></div>
-              </div>
+              <div class="stars" aria-label="5 star rating">★★★★★</div>
+              <p>Their Meta ads service gave our campaign a proper direction. The creatives, targeting approach and messaging felt professional from day one.</p>
+              <div class="reviewer"><span class="avatar">R</span><div><b>Rohan Singh</b><small>Local Service Brand</small></div></div>
             </article>
-
             <article class="review-card">
-              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-              <p>"We needed a modern website for our business and the final design looked much better than expected. It gave our brand the trust factor we were missing online."</p>
-              <div class="reviewer">
-                <div class="avatar">P</div>
-                <div><b>Priya Sharma</b><span>Salon and Beauty Studio</span></div>
-              </div>
+              <div class="stars" aria-label="5 star rating">★★★★★</div>
+              <p>We needed a modern website for our business and the final design gave our brand the trust factor we were missing online.</p>
+              <div class="reviewer"><span class="avatar">P</span><div><b>Priya Sharma</b><small>Salon and Beauty Studio</small></div></div>
             </article>
-
             <article class="review-card">
-              <div class="stars" aria-label="4 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span></div>
-              <p>"The creative posters were delivered with a premium look and clear brand messaging. Our offers started looking more professional across Instagram and WhatsApp."</p>
-              <div class="reviewer">
-                <div class="avatar">K</div>
-                <div><b>Karan Malhotra</b><span>Restaurant Owner</span></div>
-              </div>
+              <div class="stars" aria-label="5 star rating">★★★★★</div>
+              <p>The creative posters were delivered with a premium look and clear brand messaging. Our offers started looking more professional.</p>
+              <div class="reviewer"><span class="avatar">K</span><div><b>Karan Malhotra</b><small>Restaurant Owner</small></div></div>
             </article>
-
             <article class="review-card">
-              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-              <p>"The reel concept, editing style and captions were exactly aligned with our audience. It helped us keep our content consistent and more engaging."</p>
-              <div class="reviewer">
-                <div class="avatar">S</div>
-                <div><b>Simran Kaur</b><span>Boutique Founder</span></div>
-              </div>
-            </article>
-
-            <article class="review-card">
-              <div class="stars" aria-label="5 star rating"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
-              <p>"What I liked most was the agency-style process. They understood the business, planned the visuals and delivered marketing assets that looked polished and brand-safe."</p>
-              <div class="reviewer">
-                <div class="avatar">M</div>
-                <div><b>Mohit Jain</b><span>Real Estate Consultant</span></div>
-              </div>
+              <div class="stars" aria-label="5 star rating">★★★★★</div>
+              <p>The reel concept, editing style and captions were aligned with our audience. It helped us keep content consistent and engaging.</p>
+              <div class="reviewer"><span class="avatar">S</span><div><b>Simran Kaur</b><small>Boutique Founder</small></div></div>
             </article>
           </div>
 
-          <div class="review-controls" aria-label="Review slider controls">
-            <div class="review-dots" id="reviewDots"></div>
+          <div class="review-controls">
+            <div class="review-dots" id="reviewDots" aria-label="Review navigation"></div>
             <div class="review-arrows">
-              <button class="review-btn" type="button" data-review-prev aria-label="Previous review">&lt;</button>
-              <button class="review-btn" type="button" data-review-next aria-label="Next review">&gt;</button>
+              <button class="review-btn" type="button" data-review-prev aria-label="Previous review">‹</button>
+              <button class="review-btn" type="button" data-review-next aria-label="Next review">›</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="process">
+    <section class="section-pad" id="process" aria-labelledby="process-title">
       <div class="container">
         <div class="section-head reveal">
-          <h2>Simple process. Premium output.</h2>
-          <p>Starting a project is simple. Share your goal, and we handle the creative execution with a structured agency workflow.</p>
+          <div>
+            <p class="section-kicker">Process</p>
+            <h2 id="process-title">Simple workflow. Premium output. Faster launch.</h2>
+          </div>
+          <p>Share your requirement once and get structured creative execution built for real business use.</p>
         </div>
 
-        <div class="process">
-          <div class="step reveal">
-            <span>1</span>
-            <h3>Brief</h3>
-            <p>We understand your business, audience, offer and target outcome before choosing the direction.</p>
-          </div>
-          <div class="step reveal">
-            <span>2</span>
-            <h3>Concept</h3>
-            <p>We plan the visual style, content angle and offer positioning for a stronger first impression.</p>
-          </div>
-          <div class="step reveal">
-            <span>3</span>
-            <h3>Create</h3>
-            <p>We build the creative, video, page or campaign in a polished and business-ready format.</p>
-          </div>
-          <div class="step reveal">
-            <span>4</span>
-            <h3>Launch</h3>
-            <p>You receive ready-to-use assets that can go live across social media, ads or your website.</p>
-          </div>
+        <div class="process-grid">
+          <article class="process-card reveal"><span>01</span><h3>Brief</h3><p>We understand your business, offer, audience and target outcome.</p></article>
+          <article class="process-card reveal"><span>02</span><h3>Concept</h3><p>We define the content angle, visual style and conversion flow.</p></article>
+          <article class="process-card reveal"><span>03</span><h3>Create</h3><p>We design the creative, reel, landing page, website or campaign assets.</p></article>
+          <article class="process-card reveal"><span>04</span><h3>Launch</h3><p>You receive ready-to-use assets for social media, ads or website launch.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="container">
-        <div class="cta-band reveal">
-          <div class="cta-content">
-            <div>
-              <h2>Ready to make your brand look premium?</h2>
-              <p>Message us on WhatsApp to discuss your service, budget, timeline or campaign idea.</p>
-            </div>
-            <a class="btn btn-whatsapp" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener">Contact on WhatsApp</a>
-          </div>
+    <section class="section-pad contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container cta-card reveal">
+        <div>
+          <p class="section-kicker">Start Today</p>
+          <h2 id="contact-title">Ready to make your brand look premium?</h2>
+          <p>Message us on WhatsApp to discuss your service, budget, timeline or campaign idea.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-whatsapp js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" data-lead-label="Final WhatsApp">Contact on WhatsApp</a>
+          <a class="btn btn-ghost" href="#services">Check Pricing</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="concept-care-logo.jpg" alt="Concept Care Studio logo" />
+        <div><strong>Concept Care Studio</strong><small>Creative Strategy. Reels. Posters. Ads. Landing Pages. Websites.</small></div>
+      </div>
       <p>Copyright 2026 Concept Care Studio. All rights reserved.</p>
-      <p>Creative Strategy. Reels. Posters. Ads. Landing Pages. Websites.</p>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" aria-label="Contact Concept Care Studio on WhatsApp">
-    <span>W</span>
+  <div class="live-review-toast" id="liveReviewToast" aria-live="polite" aria-atomic="true"></div>
+
+  <a class="whatsapp-float js-lead" href="https://wa.me/message/CU4V373ORFKIJ1" target="_blank" rel="noopener" aria-label="Contact Concept Care Studio on WhatsApp" data-lead-label="Floating WhatsApp">
+    <span>☎</span>
   </a>
 
-  <script>
-    const revealElements = document.querySelectorAll(".reveal");
+  <button class="top-float" type="button" aria-label="Back to top" data-back-top>↑</button>
 
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14 });
-
-    revealElements.forEach((element, index) => {
-      element.style.transitionDelay = `${Math.min(index * 45, 220)}ms`;
-      revealObserver.observe(element);
-    });
-
-    const reviewSlider = document.querySelector("#reviewSlider");
-    const reviewCards = reviewSlider ? Array.from(reviewSlider.querySelectorAll(".review-card")) : [];
-    const reviewDots = document.querySelector("#reviewDots");
-    const previousReview = document.querySelector("[data-review-prev]");
-    const nextReview = document.querySelector("[data-review-next]");
-
-    const getVisibleReviewCount = () => {
-      if (window.matchMedia("(max-width: 720px)").matches) return 1;
-      if (window.matchMedia("(max-width: 1020px)").matches) return 2;
-      return 3;
-    };
-
-    const updateReviewDots = () => {
-      if (!reviewSlider || !reviewDots || !reviewCards.length) return;
-      const cardWidth = reviewCards[0].getBoundingClientRect().width + 16;
-      const activeIndex = Math.round(reviewSlider.scrollLeft / cardWidth);
-      const dotCount = Math.max(1, reviewCards.length - getVisibleReviewCount() + 1);
-      reviewDots.innerHTML = "";
-
-      for (let index = 0; index < dotCount; index += 1) {
-        const dot = document.createElement("button");
-        dot.className = `review-dot${index === activeIndex ? " active" : ""}`;
-        dot.type = "button";
-        dot.setAttribute("aria-label", `Show review ${index + 1}`);
-        dot.addEventListener("click", () => {
-          reviewSlider.scrollTo({ left: index * cardWidth, behavior: "smooth" });
-        });
-        reviewDots.appendChild(dot);
-      }
-    };
-
-    const slideReviews = (direction) => {
-      if (!reviewSlider || !reviewCards.length) return;
-      const cardWidth = reviewCards[0].getBoundingClientRect().width + 16;
-      reviewSlider.scrollBy({ left: direction * cardWidth, behavior: "smooth" });
-    };
-
-    previousReview?.addEventListener("click", () => slideReviews(-1));
-    nextReview?.addEventListener("click", () => slideReviews(1));
-    reviewSlider?.addEventListener("scroll", () => window.requestAnimationFrame(updateReviewDots), { passive: true });
-    window.addEventListener("resize", updateReviewDots);
-    updateReviewDots();
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
-
